@@ -1,0 +1,321 @@
+/* General styles */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#particles-js{
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(rgba(0,0,0,0.5)), rgba(0,0,0,0.7)("../img/ftinicial.jpg");
+    filter: opacity();
+
+}
+
+#imgArthur{
+    margin: 0 300%;
+    max-width: 200px;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.titulo{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 80px;
+    color: white;
+}
+
+.h1Nav{
+    color: #333;
+    margin: 0;
+}
+
+.hero {
+    background-color: #333;
+    display: flex;
+    margin: 20px;
+    justify-content:space-around;
+    align-items: center;
+}
+
+.imgInicial{
+    max-width: 100px;
+    z-index: 2;
+
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: white;
+    background-color: #333;
+    margin: 0;
+    padding: 0;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 1rem;
+  }
+  
+  p {
+    margin-bottom: 1.5rem;
+  }
+  
+  a {
+    color: #4a86e8;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  button, input[type="submit"] {
+    background-color: #4a86e8;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+  }
+  
+  button:hover, input[type="submit"]:hover {
+    background-color: #3569ce;
+  }
+  
+  input[type="text"], input[type="email"], textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    border: 1px solid #ccc;
+  }
+  
+  input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
+    outline: none;
+    box-shadow: 0 0 2px 1px #4a86e8;
+  }
+  
+  /* Navbar styles */
+  nav {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  nav ul {
+    display: flex;
+    list-style: none;
+    margin-right: 50px
+  }
+  
+  nav ul li {
+    margin-right: 1rem;
+  }
+  
+  nav ul li:last-child {
+    margin-right: 0;
+  }
+  
+  nav ul li a {
+    color: #333;
+  }
+  
+  nav .burger-menu {
+    display: none;
+  }
+  
+  /* Hero section styles */
+  .hero {
+    background-image: url('hero-background.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    overflow: hidden;
+  }
+  
+  .hero h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    animation: fadeInUp 1s ease-out forwards;
+  }
+  
+  .hero p {
+    font-size: 1.5rem;
+    animation: fadeInUp 1s 0.2s ease-out forwards;
+  }
+  
+  /* Skills section styles */
+  #skills {
+    background-color: #fff;
+    padding: 4rem 2rem;
+    animation: fadeInUp 1s 0.4s ease-out forwards;
+  }
+  
+  #skills h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  #skills ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    margin-bottom: 2rem;
+  }
+  
+  #skills li {
+    width: 20%;
+    text-align: center;
+  }
+  
+  #skills li span {
+    display: block;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  #skills li .progress {
+    height: 0.5rem;
+    background-color: #ddd;
+    border-radius: 0.25rem;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+  }
+  
+  #skills li .progress .progress-bar {
+    height: 100%;
+    background-color: #4a86e8;
+    transition: width 0.5s ease-in-out;
+  }
+  
+  /* Projects section styles */
+  #projects {
+    background-color: #f4f4f4;
+    padding: 4rem 2rem;
+    animation: fadeInUp 1s 0.6s ease-out forwards;
+  }
+  
+  #projects h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  #projects .project-container {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  #projects .project-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  #projects .project-container img {
+    width: 100%;
+    border-radius: 0.25rem;
+    margin-bottom: 1rem;
+  }
+  
+  #projects .project-container h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  #projects .project-container p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Contact section styles */
+  #contact {
+    background-color: #fff;
+    padding: 4rem 2rem;
+    animation: fadeInUp 1s 0.8s ease-out forwards;
+  }
+  
+  #contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  #contact .contact-form-container {
+    background-color: #f4f4f4;
+    padding: 2rem;
+    border-radius: 0.25rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+  }
+  
+  #contact .contact-form-container label {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  
+  #contact .contact-form-container textarea {
+    width: 100%;
+    height: 10rem;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    border: 1px solid #ccc;
+    resize: vertical;
+    margin-bottom: 1rem;
+  }
+  
+  #contact .contact-form-container .input-field {
+    width: 50%;
+    margin-bottom: 1rem;
+  }
+  
+  /* Footer section styles */
+  #footer {
+    background-color: #333;
+    color: #fff;
+    padding: 2rem;
+    text-align: center;
+    animation: fadeInUp 1s 1s ease-out forwards;
+  }
+  
+  #footer a {
+    color: #fff;
+    margin: 0 0.5rem;
+  }
+  
+  /* Media queries for responsive design */
+  @media (max-width: 768px) {
+    nav {
+      padding: 1rem;
+    }
+  
+    nav ul {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }}
