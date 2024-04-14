@@ -39,3 +39,72 @@ function animateCardClient() {
 
 // Inicia a animação ao carregar a página
 window.addEventListener('load', animateCardClient);
+// Função para iniciar a animação das letras
+        function startLetterAnimation() {
+            const letters = document.querySelectorAll('.letter');
+
+            letters.forEach((letter, index) => {
+                // Definir atraso de animação para cada letra
+                letter.style.animationDelay = `${index * 0.2}s`;
+            });
+        }
+
+        // Função para esconder o loader
+        function hideLoader() {
+            const loader = document.getElementById('loader');
+            
+            // Define animação de saída (fade out) para o loader
+            loader.style.animation = 'fadeOut 0.5s ease forwards';
+            
+            // Após a animação de saída terminar, remova o loader do DOM
+            loader.addEventListener('animationend', function() {
+                loader.style.display = 'none';
+            });
+        }
+
+        // Inicia a animação das letras ao carregar a página
+        window.addEventListener('load', () => {
+            startLetterAnimation();
+
+            // Esconde o loader após 3 segundos
+            setTimeout(hideLoader, 3000);
+        });
+
+        // Função para animar a div card-client
+        function animateCardClient() {
+            const cardClient = document.getElementById('cardClient');
+
+            // Animação da borda surgindo aos poucos
+            anime({
+                targets: cardClient,
+                borderColor: ['transparent', '#000000'],
+                easing: 'linear',
+                duration: 2000,
+            });
+
+            // Após a animação da borda, anima o ::after
+            setTimeout(() => {
+                // Define altura de `card-client::after`
+                cardClient.style.setProperty('--after-height', '80%');
+                const cardClientAfter = cardClient.querySelector('::after');
+
+                if (cardClientAfter) {
+                    cardClientAfter.style.height = '80%';
+                }
+            }, 2000); // Delay para começar após animação da borda
+        }
+
+        // Inicia a animação ao carregar a página
+        window.addEventListener('load', animateCardClient);
+
+        // Evento de rolagem para manipular o estilo da barra de navegação
+        window.addEventListener('scroll', function() {
+            const top = window.scrollY;
+            const header = document.querySelector('.navbar');
+            
+            if (top >= 100) {
+                header.classList.add('navbarDark');
+            } else {
+                header.classList.remove('navbarDark');
+            }
+        });
