@@ -67,7 +67,7 @@ window.addEventListener('load', animateCardClient);
             startLetterAnimation();
 
             // Esconde o loader após 3 segundos
-            setTimeout(hideLoader, 3000);
+            setTimeout(hideLoader, 3400);
         });
 
         // Função para animar a div card-client
