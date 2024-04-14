@@ -1,187 +1,103 @@
 <!DOCTYPE html>
-<html lang="pt">
-
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Loader Minimalista</title>
-    <!-- Adicione o link para a biblioteca Anime.js, se estiver usando -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-    <style>
-        /* Estilização do loader */
-        .loader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #000;
-            opacity: 1;
-            z-index: 9999;
-            transition: opacity 0.5s ease; /* Transição suave para fade out */
-        }
-
-        /* Quando escondido, o loader tem opacidade zero */
-        .loader.hide {
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        /* Estilização do texto do loader */
-        .loader-text {
-            font-size: 3rem;
-            color: #fff;
-            font-weight: bold;
-            display: flex;
-            gap: 5px;
-        }
-
-        /* Estilização das letras */
-        .letter {
-            opacity: 0;
-            animation: fadeIn 1.5s ease forwards;
-        }
-
-        /* Definição da animação de entrada */
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 1;
-            }
-        }
-        
-        /* Animação de saída (fade out) */
-        @keyframes fadeOut {
-            0% {
-                opacity: 1;
-            }
-            100% {
-                opacity: 0;
-            }
-        }
-
-        /* Adicione o estilo para navbarDark no CSS */
-        .navbarDark {
-            background-color: #101;
-        }
-
-        /* Estilo para a classe card-client::after */
-        .card-client::after {
-            content: '';
-            position: absolute;
-            bottom: -20px;
-            left: 50%;
-            width: 1px;
-            height: 0;
-            background-color: #000;
-            transition: height 2s linear;
-            transform: translateX(-50%);
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
-
 <body>
-    <div class="loader" id="loader">
-        <div class="loader-text">
-            <span class="letter">A</span>
-            <span class="letter">r</span>
-            <span class="letter">t</span>
-            <span class="letter">h</span>
-            <span class="letter">u</span>
-            <span class="letter">r</span>
-            <span class="letter">&nbsp;</span>
-            <span class="letter">M</span>
-            <span class="letter">a</span>
-            <span class="letter">l</span>
-            <span class="letter">v</span>
-            <span class="letter">e</span>
-            <span class="letter">s</span>
-            <span class="letter">t</span>
-            <span class="letter">e</span>
-        </div>
+  <!-- test edeito animação after -->
+  <div class="content">
+    <div class="content2">
     </div>
 
-    <div class="navbar">Navbar</div>
+  </div>
+  <style>
 
-    <div id="cardClient" class="card-client" style="position: relative; width: 300px; height: 300px; border: 1px solid transparent;">
-        <!-- Seu conteúdo aqui -->
-    </div>
+    body{
+      background-color: aquamarine;
+    }
 
-    <script>
-        // Função para iniciar a animação das letras
-        function startLetterAnimation() {
-            const letters = document.querySelectorAll('.letter');
+    .content{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      width: 100px;
+      height: 50px;
+      background-color: black;
+      z-index: 100;
+      border-radius: 10px;
+      overflow:hidden;
+    }
 
-            letters.forEach((letter, index) => {
-                // Definir atraso de animação para cada letra
-                letter.style.animationDelay = `${index * 0.2}s`;
-            });
-        }
+    .content2{
+      position: relative;
+      width: 90px;
+      height: 40px;
+      background-color: blue;
+      border-radius: 10px;
+      z-index: 2;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+    }
 
-        // Função para esconder o loader
-        function hideLoader() {
-            const loader = document.getElementById('loader');
-            
-            // Define animação de saída (fade out) para o loader
-            loader.style.animation = 'fadeOut 0.5s ease forwards';
-            
-            // Após a animação de saída terminar, remova o loader do DOM
-            loader.addEventListener('animationend', function() {
-                loader.style.display = 'none';
-            });
-        }
+    .content2::before {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 200px;
+      border-radius: 10px;
+      background: linear-gradient(silver, white);
+      animation: animate2 2s linear infinite;
+      z-index: -1;
+    }
 
-        // Inicia a animação das letras ao carregar a página
-        window.addEventListener('load', () => {
-            startLetterAnimation();
+    .content2::after{
+      content: "";
+      width: 95px;
+      height: 45px;
+      background-color: blue;
+      border-radius: 10px;
+      z-index: 2;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+    }
 
-            // Esconde o loader após 3 segundos
-            setTimeout(hideLoader, 3000);
-        });
+    @keyframes animate2 {
+      100%{
+        transform: rotate(360deg);
+      }
+    }
 
-        // Função para animar a div card-client
-        function animateCardClient() {
-            const cardClient = document.getElementById('cardClient');
+    .content3::before {
+      position: absolute;
+      content: "";
+      width: 1900px;
+      background-color: black;
+      height: 10%;
+      z-index: 3;  
+    }
 
-            // Animação da borda surgindo aos poucos
-            anime({
-                targets: cardClient,
-                borderColor: ['transparent', '#000000'],
-                easing: 'linear',
-                duration: 2000,
-            });
+    .content::after {
+      position: absolute;
+      content: "";
+      width: 30px;
+      background-color: white;
+      height: 10%;
+      margin: 25%;
+      z-index: 1;
+      animation: animate 2s linear infinite;
+      border-radius: 10px;
+    }
 
-            // Após a animação da borda, anima o ::after
-            setTimeout(() => {
-                // Define altura de `card-client::after`
-                cardClient.style.setProperty('--after-height', '80%');
-                const cardClientAfter = cardClient.querySelector('::after');
-
-                if (cardClientAfter) {
-                    cardClientAfter.style.height = '80%';
-                }
-            }, 2000); // Delay para começar após animação da borda
-        }
-
-        // Inicia a animação ao carregar a página
-        window.addEventListener('load', animateCardClient);
-
-        // Evento de rolagem para manipular o estilo da barra de navegação
-        window.addEventListener('scroll', function() {
-            const top = window.scrollY;
-            const header = document.querySelector('.navbar');
-            
-            if (top >= 100) {
-                header.classList.add('navbarDark');
-            } else {
-                header.classList.remove('navbarDark');
-            }
-        });
-    </script>
+    @keyframes animate {
+      100%{
+        transform: translateX(calc(240px));
+      }
+    }
+  </style>
 </body>
-
 </html>
