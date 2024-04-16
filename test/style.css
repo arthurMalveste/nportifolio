@@ -1,7 +1,18 @@
 body{
   background-color: #302e2e;
   color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+
+  .total {
+    height: 100vh;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+  }
 
 .geral{
   display: flex;
@@ -14,7 +25,7 @@ body{
 
 .coluna{
   padding: 0 50px;
-  animation: animacao 20s ease forwards;
+  max-width: 100px;
 }
 
 .h1Coluna{
@@ -22,11 +33,46 @@ body{
   font-size: 40px;
 }
 
-@keyframes animacao {
-  0%{
-    transform: translateY(50px)
-  }
-  100%{
-    transform: translateY(100px)
-  }
+.gif{
+  width: 300px;
+}
+
+button {
+  font-size: 18px;
+  color: #e1e1e1;
+  font-family: inherit;
+  font-weight: 800;
+  cursor: pointer;
+  position: relative;
+  border: none;
+  background: none;
+  text-transform: uppercase;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: color;
+}
+
+button:focus,
+button:hover {
+  color: #fff;
+}
+
+button:focus:after,
+button:hover:after {
+  width: 100%;
+  left: 0%;
+}
+
+button:after {
+  content: "";
+  pointer-events: none;
+  bottom: -2px;
+  left: 50%;
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: #fff;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: width, left;
 }
