@@ -242,8 +242,8 @@ nav .burger-menu {
 .card-client::after{
 display: block; /* Para que possamos definir a altura */
 position: absolute;
-height: 80%;
-margin: 40px 0 0 44%;
+height: 60%;
+margin: 36px 0 0 44%;
 width: 1px;
 content: '';
 padding: 4px 1px;
@@ -350,6 +350,28 @@ img{
 .social-media a:hover .tooltip-social {
   opacity: 1;
   transform: translate(-50%, -130%);
+}
+
+/* about styles */
+
+.about{
+  background-color: #262626;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  margin: 100px 30px;
+  align-items: center;
+  border-radius: 30px;
+  border: #000 solid 4px;
+}
+
+.aboutP2{
+  max-width: 400px;
+  padding: 10%;
+}
+
+.aboutImg{
+  scale: 2;
 }
 
 
@@ -496,3 +518,4 @@ img{
   color: #fff;
   margin: 0 0.5rem;
 }
+
