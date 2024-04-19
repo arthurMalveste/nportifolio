@@ -1,4 +1,6 @@
 /* General styles */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+
 
 *{
   margin: 0;
@@ -383,48 +385,133 @@ img{
 
 
 /* Skills section styles */
-#skills {
-  background-color: #fff;
-  padding: 4rem 2rem;
-  animation: fadeInUp 1s 0.4s ease-out forwards;
+.container{
+  position: relative;
+  max-width: 90%;
+  width: 100%;
+  background: #ffffff;
+  margin: 0 15px;
+  padding: 10px 20px;
+  border-radius: 7px;
 }
-
-#skills h2 {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  text-align: center;
+.container .skill-box{
+  width: 100%;
+  margin: 25px 0;
 }
-
-#skills ul {
-  display: flex;
-  justify-content: space-between;
-  list-style: none;
-  margin-bottom: 2rem;
-}
-
-#skills li {
-  width: 20%;
-  text-align: center;
-}
-
-#skills li span {
+.skill-box .title{
   display: block;
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
+  font-size: 14px;
+  font-weight: 600;
+  color: #171717;
 }
-
-#skills li .progress {
-  height: 0.5rem;
-  background-color: #ddd;
-  border-radius: 0.25rem;
-  overflow: hidden;
-  margin-bottom: 0.5rem;
+.skill-box .skill-bar{
+  height: 8px;
+  width: 100%;
+  border-radius: 6px;
+  margin-top: 6px;
+  background: rgba(0,0,0,0.1);
 }
-
-#skills li .progress .progress-bar {
+.skill-bar .skill-per{
+  position: relative;
+  display: block;
   height: 100%;
-  background-color: #4a86e8;
-  transition: width 0.5s ease-in-out;
+  width: 80%;
+  border-radius: 6px;
+  background: #000;
+  animation: progress 0.4s ease-in-out forwards;
+  opacity: 0;
+}
+.skill-per.css{
+  width: 50%;
+  animation-delay: 0.1s;
+}
+.skill-per.javascript{
+  width: 40%;
+  animation-delay: 0.2s;
+}
+
+.skill-per.nodejs{
+  width: 30%;
+  animation-delay: 0.3s;
+}
+
+@keyframes progress {
+  0%{
+      width: 0;
+      opacity: 1;
+  }
+  100%{
+      opacity: 1;
+  }
+}
+.skill-per .tooltip{
+  position: absolute;
+  right: -14px;
+  top: -28px;
+  font-size: 9px;
+  font-weight: 500;
+  color: #fff;
+  padding: 2px 6px;
+  border-radius: 3px;
+  background: #000;
+  z-index: 1;
+}
+.tooltip::before{
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -2px;
+  height: 10px;
+  width: 10px;
+  z-index: -1;
+  background-color: #000000;
+  transform: translateX(-50%) rotate(45deg);
+
+}
+/* Estilo para alinhar as caixas em uma linha */
+.divCaixa {
+display: flex; /* Use flexbox para alinhar as caixas */
+justify-content: space-around; /* Espaçamento uniforme entre as caixas */
+margin-bottom: 20px; /* Espaçamento entre as caixas e as skills */
+}
+
+/* Estilo para as caixas */
+.caixa {
+width: 150px; /* Largura das caixas */
+padding: 20px;
+margin: 10px; /* Espaçamento entre caixas */
+background-color: #f0f0f0; /* Cor de fundo suave */
+border-radius: 10px; /* Canto arredondado */
+box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+text-align: center; /* Alinhe o conteúdo ao centro */
+}
+
+/* Estilo para as imagens nas caixas */
+.caixa img {
+width: 50px; /* Tamanho das imagens */
+height: 50px;
+border-radius: 50%; /* Torna as imagens circulares */
+margin-bottom: 10px; /* Espaçamento entre a imagem e o título */
+}
+
+/* Estilo para os títulos nas caixas */
+.caixa h1 {
+font-size: 16px; /* Ajuste o tamanho conforme necessário */
+color: #333; /* Cor do texto */
+margin-bottom: 8px; /* Espaçamento entre título e descrição */
+}
+
+/* Estilo para as descrições nas caixas */
+.caixa p {
+font-size: 14px; /* Tamanho do texto para descrições */
+color: #555; /* Cor mais suave */
+}
+
+.sec{
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
 }
 
 /* Projects section styles */
