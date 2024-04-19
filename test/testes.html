@@ -1,23 +1,81 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-	<title>404 Error Page</title>
-	<link rel="stylesheet" type="text/css" href="/test/style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Importação de CSS -->
+    <link rel="stylesheet" href="/test/style.css">
+    <title>Animated Skills Bar</title>
 </head>
+
 <body>
-  <div class="total">
-  <section class="geral">
-	  <div class="container">
-	  	<h1 class="animated-text">404</h1>
-	  	<p class="message">Página não encontrada, possivelmente a url digitada está errada ou tal rota ainda não configurada, se o problema persistir, fique a vontade para entrar em contato.</p>
-	  	<a href="/" class="button"><button>Voltar</button></a>
-	  </div>
-    <div class="coluna">
-      <img class="gif" src="/static/img/pagenot.gif" alt="">
-    </div>
-  </section>
-</div>
-	<script src="script.js"></script>
+	<section class="sec">
+		<!-- Seção das caixas -->
+		<div class="divCaixa">
+			<div class="caixa">
+				<img class="imgCaixa" src="caminho/para/imagem/python.png" alt="Python">
+				<h1>Python</h1>
+				<p>Programação em Python.</p>
+			</div>
+			<div class="caixa">
+				<img class="imgCaixa" src="caminho/para/imagem/htmlcss.png" alt="HTML e CSS">
+				<h1>HTML e CSS</h1>
+				<p>Desenvolvimento Web com HTML e CSS.</p>
+			</div>
+			<div class="caixa">
+				<img class="imgCaixa" src="caminho/para/imagem/nodejs.png" alt="NodeJS">
+				<h1>NodeJS</h1>
+				<p>Desenvolvimento com NodeJS.</p>
+			</div>
+			<div class="caixa">
+				<img class="imgCaixa" src="caminho/para/imagem/js.png" alt="JavaScript">
+				<h1>JavaScript</h1>
+				<p>Programação em JavaScript.</p>
+			</div>
+			<div class="caixa">
+				<img class="imgCaixa" src="caminho/para/imagem/gitgithub.png" alt="Git e GitHub">
+				<h1>Git e GitHub</h1>
+				<p>Controle de versão com Git e GitHub.</p>
+			</div>
+		</div>
+
+		<!-- Seção de habilidades -->
+		<div class="container">
+			<div class="skill-box">
+				<span class="title">HTML</span>
+				<div class="skill-bar">
+					<span class="skill-per html">
+						<span class="tooltip">90%</span>
+					</span>
+				</div>
+			</div>
+			<div class="skill-box">
+				<span class="title">CSS</span>
+				<div class="skill-bar">
+					<span class="skill-per css">
+						<span class="tooltip">70%</span>
+					</span>
+				</div>
+			</div>
+			<div class="skill-box">
+				<span class="title">JavaScript</span>
+				<div class="skill-bar">
+					<span class="skill-per javascript">
+						<span class="tooltip">50%</span>
+					</span>
+				</div>
+			</div>
+			<div class="skill-box">
+				<span class="title">NodeJS</span>
+				<div class="skill-bar">
+					<span class="skill-per nodejs">
+						<span class="tooltip">30%</span>
+					</span>
+				</div>
+			</div>
+		</div>
+	</section>
 </body>
-	<script src="/test/test.js"></script>
 </html>
