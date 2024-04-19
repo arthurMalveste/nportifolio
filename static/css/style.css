@@ -514,6 +514,10 @@ align-items: center;
 flex-direction: column;
 }
 
+.imgCaixa{
+  filter: none;
+}
+
 /* Projects section styles */
 #projects {
   background-color: #f4f4f4;
