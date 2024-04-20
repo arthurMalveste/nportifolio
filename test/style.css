@@ -57,7 +57,29 @@ body {
 .card-list .developer {
     background-color: #F7DFF5; 
     color: #B22485;
-}   
+}
+
+.card-list .tipo1{
+    background-color: #d0a6a6;
+    color: #ffffff;
+}
+
+.card-list .tipo2{
+    background-color: #bbe25e;
+    color: #477900;
+}
+
+.card-list .tipo3{
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.card-list .tipo4{
+    background-color: #fff;
+    color: #000;
+    border: #000 1px solid;
+}
+
 
 .card-list .designer {
     background-color: #d1e8ff;
