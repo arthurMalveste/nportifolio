@@ -387,12 +387,13 @@ img{
 /* Skills section styles */
 .container{
   position: relative;
-  max-width: 90%;
+  max-width: 60%;
   width: 100%;
   background: #ffffff;
-  margin: 0 15px;
+  margin: 20px 15px;
   padding: 10px 20px;
   border-radius: 7px;
+  
 }
 .container .skill-box{
   width: 100%;
@@ -484,6 +485,9 @@ background-color: #f0f0f0; /* Cor de fundo suave */
 border-radius: 10px; /* Canto arredondado */
 box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
 text-align: center; /* Alinhe o conteúdo ao centro */
+transition: 0.6s;
+/* animation: animateBorder 5s infinite linear; */
+border: 2px solid #000; /* Cor inicial da borda */
 }
 
 /* Estilo para as imagens nas caixas */
@@ -518,47 +522,47 @@ flex-direction: column;
   filter: none;
 }
 
+.caixa:hover{
+  border-radius: 10px;
+  animation: animateBorder 5s infinite linear;
+  border: 2px solid #000; /* Cor inicial da borda */
+  /* scale: 1; */
+  /* margin: 50px; */
+  background-color: #171717;
+  filter: grayscale(1);
+}
+
+@keyframes animateBorder {
+  0% {
+      border-color: rgb(255, 0, 0); /* Vermelho */
+  }
+  25% {
+      border-color: rgb(0, 255, 0); /* Verde */
+  }
+  50% {
+      border-color: rgb(0, 0, 255); /* Azul */
+  }
+  75% {
+      border-color: rgb(255, 255, 0); /* Amarelo */
+  }
+  100% {
+      border-color: rgb(255, 0, 255); /* Magenta */
+  }
+}
+
 /* Projects section styles */
-#projects {
-  background-color: #f4f4f4;
-  padding: 4rem 2rem;
-  animation: fadeInUp 1s 0.6s ease-out forwards;
+
+#projetos{
+  background-image: url('hero-background.jpg');
+  background-size: cover;
+  background-position: center;
 }
 
-#projects h2 {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  text-align: center;
-}
-
-#projects .project-container {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 2rem;
-  margin-bottom: 2rem;
-  text-align: center;
-  transition: transform 0.3s ease-in-out;
-}
-
-#projects .project-container:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-#projects .project-container img {
-  width: 100%;
-  border-radius: 0.25rem;
-  margin-bottom: 1rem;
-}
-
-#projects .project-container h3 {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-}
-
-#projects .project-container p {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
+.conteudoProjeto{
+  background-color: #262626;
+  margin: 50px;
+  border-radius: 15px;
+  padding: 10px;
 }
 
 /* Contact section styles */
