@@ -563,6 +563,14 @@ flex-direction: column;
   margin: 50px;
   border-radius: 15px;
   padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.h1Projeto{
+  text-align: center;
+  font-size: 25px;
 }
 
 /* Contact section styles */
