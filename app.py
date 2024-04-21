@@ -6,6 +6,14 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
+@app.route('/termosdeuso')
+def termosdeuso():
+    return render_template('termosecondicoes.html')
+
+@app.route('/politica')
+def politica():
+    return render_template('politicadeprivacidade.html')
+
 
 # Manipulador de erro para página não encontrada (Erro 404)
 @app.errorhandler(404)
