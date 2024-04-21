@@ -146,10 +146,6 @@ button, input[type="submit"] {
   cursor: pointer;
 }
 
-button:hover, input[type="submit"]:hover {
-  background-color: #3569ce;
-}
-
 input[type="text"], input[type="email"], textarea {
   width: 100%;
   padding: 0.5rem;
@@ -803,7 +799,15 @@ flex-direction: column;
     font-weight: bold;
     letter-spacing: 1px;
   }
+
+  .user-box::selection{
+    border: none;
+  }
   
+  .user-box::hover{
+    border: none;
+  }
+
   .login-box .user-box {
     position: relative;
   }
@@ -1058,4 +1062,17 @@ flex-direction: column;
   
   .icon-footer:hover svg path.path-color {
     stroke: #fff !important;
+  }
+
+  .boxMsg::selection{
+    background-color: red;
+  }
+
+  .submitA{
+    text-decoration: none;
+  }
+
+  .submitA:hover{
+    text-decoration: none;
+    background-color: #000;
   }
