@@ -579,7 +579,7 @@ flex-direction: column;
 }
 
 .card-list .card-item {
-  background: #fff;
+  background: #333;
   padding: 26px;
   border-radius: 8px;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.04);
@@ -592,6 +592,10 @@ flex-direction: column;
 
 .card-list .card-item:hover {
   border: 2px solid #000;
+}
+
+.card-item:hover{
+  background-color: #3e3e3e;
 }
 
 .card-list .card-item img {
@@ -649,7 +653,7 @@ flex-direction: column;
 }
 
 .card-item h3 {
-  color: #000;
+  color: white;
   font-size: 1.438rem;
   margin-top: 28px;
   font-weight: 600;
@@ -662,7 +666,8 @@ flex-direction: column;
   transform: rotate(-35deg);
   height: 40px;
   width: 40px;
-  color: #000;
+  color:#000;
+  background-color: white;
   border: 1px solid #000;
   border-radius: 50%;
   margin-top: 40px;
