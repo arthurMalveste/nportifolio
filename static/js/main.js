@@ -1,3 +1,5 @@
+import smoothScroll from 'smoothscroll';
+
 const header = document.querySelector('.navbar');
 
 window.onscroll = function() {

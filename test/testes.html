@@ -12,7 +12,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/static/css/style.css">
+  <link rel="stylesheet" href="/test/teste.css">
   <script src="/static/js/main.js" defer></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <link rel="stylesheet" href="https://unpkg.com/ionicons@5.5.2/dist/ionicons.min.css" />
@@ -24,21 +24,38 @@
 
 <body class="particles-js">
 
-  <!-- Hero Section -->
-  <section class="hero" id="about">
-    <div id="particles-js">
-        <h1 id="h1Titulo" class="titulo">Arthur Malveste</h1>
-    </div>
-    <!-- particulas -->
-
-    <script src="../static/js/particles.js"></script>
-    <script src="../static/js/app.js"></script>
-    
+  <section id="sobre">
+    <h2>Sobre Mim</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed nec lectus eget ex fermentum viverra. Sed mauris ligula, tincidunt at enim ut, ullamcorper hendrerit lectus. Donec ullamcorper nulla non metus bibendum, quis convallis lorem semper.</p>
+    <a href="#habilidades" class="btn btn-primary">Ver Habilidades</a>
   </section>
-  <section class="particles-js">
-    <div style="margin: 300px;"><h1>Arthuyr teste</h1>
-         <h2>teste</h2>
+  
+  <section id="habilidades">
+    <h2>Habilidades</h2>
+    <ul>
+      <li>Linguagens de Programação: JavaScript, Python, Java</li>
+      <li>Frameworks: React, Angular, Vue.js</li>
+      <li>Bancos de Dados: MySQL, PostgreSQL, MongoDB</li>
+      <li>Controle de Versão: Git</li>
+    </ul>
+    <a href="#projetos" class="btn btn-primary">Ver Projetos</a>
+  </section>
+  
+  <section id="projetos">
+    <h2>Projetos</h2>
+    <div class="project-card">
+      <h3>Nome do Projeto</h3>
+      <p>Descrição do projeto.</p>
+      <a href="#" class="btn btn-primary">Ver Detalhes</a>
+    </div>
+    <div class="project-card">
+      <h3>Nome do Projeto</h3>
+      <p>Descrição do projeto.</p>
+      <a href="#" class="btn btn-primary">Ver Detalhes</a>
     </div>
   </section>
+  
+  
+  <script src="/test/test.js"></script>
 </body>
 </html>
