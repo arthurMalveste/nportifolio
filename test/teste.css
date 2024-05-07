@@ -1,88 +1,41 @@
-body{
-  background-color: black;
-}
-
-#hero {
-  background-color: #F0F0F0; /* Cor de fundo clara */
-  padding: 50px 0; /* Espaçamento em torno do conteúdo */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra sutil */
-}
-
-.container {
-  width: 80%;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.hero-content {
+#about-me {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 50px;
+  background-color: #f5f5f5;
 }
 
-.hero-content img {
-  width: 300px;
-  height: auto;
+.profile-picture {
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  background-image: url("profile-picture.jpg");
+  background-size: cover;
 }
 
-.text-container {
-  text-align: center;
+.text {
+  flex: 1;
+  margin-left: 50px;
 }
 
-h1 {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  color: #333;
+.text h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
 }
 
-p {
-  font-family: 'Roboto', sans-serif;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: #666;
+.text p {
+  font-size: 18px;
+  margin-bottom: 30px;
 }
 
-.btn {
-  background-color: #007bff;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+.text ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.btn:hover {
-  background-color: #0056b3;
-}
-
-.social-media {
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-}
-
-.social-media a {
-  margin-right: 10px;
-  font-size: 1.5rem;
-  color: #333;
-  transition: color 0.3s ease;
-}
-
-.social-media a:hover {
-  color: #007bff;
-}
-
-/* Estilos responsivos para diferentes tamanhos de tela */
-@media (max-width: 768px) {
-  .hero-content {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .hero-content img {
-    margin-bottom: 20px;
-  }
+.text li {
+  font-size: 16px;
+  margin-bottom: 10px;
 }
