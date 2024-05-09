@@ -22,7 +22,7 @@
 
 ### Linguagens usadas
 
-<li> Java Script (particles.js)
+<li> Java Script (particles.js, Scroll)
 <li> Python (Flask)
 <li> HTML
 <LI> CSS
