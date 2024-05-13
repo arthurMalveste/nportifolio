@@ -1087,6 +1087,8 @@ flex-direction: column;
     color: #a6a6a6;
     gap: 30px;
     display: flex;
+    align-items: center;
+    margin: 0;
   }
   
   .sec-direitos p a {
