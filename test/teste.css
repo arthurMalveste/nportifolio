@@ -1,41 +1,55 @@
-#about-me {
+#sobre-mim {
+  background-color: #111; /* Fundo preto */
+  color: #eee; /* Texto cinza claro */
+  padding: 50px 0;
+  text-align: center;
+}
+
+.timeline-container {
+  width: 90%;
+  margin: 0 auto;
+  overflow-x: hidden; /* Esconde a barra de rolagem horizontal */
+  position: relative;
+}
+
+.timeline {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 50px;
-  background-color: #f5f5f5;
+  white-space: nowrap;
+  transition: transform 0.5s ease-in-out; /* Transição suave */
 }
 
-.profile-picture {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  background-image: url("profile-picture.jpg");
-  background-size: cover;
-}
-
-.text {
-  flex: 1;
-  margin-left: 50px;
-}
-
-.text h1 {
-  font-size: 36px;
-  margin-bottom: 20px;
-}
-
-.text p {
-  font-size: 18px;
-  margin-bottom: 30px;
-}
-
-.text ul {
+.timeline li {
+  flex: 0 0 100%; /* Define cada marco para ocupar 100% da largura */
+  padding: 20px 0;
   list-style: none;
-  padding: 0;
-  margin: 0;
 }
 
-.text li {
-  font-size: 16px;
-  margin-bottom: 10px;
+.timeline h3 {
+  color: #fff; /* Títulos brancos */
+}
+
+.timeline p {
+  line-height: 1.6;
+}
+
+/* Estilos para os botões de navegação */
+.timeline-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.timeline-navigation button {
+  background-color: #333; /* Botões cinza escuro */
+  color: #eee;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .timeline li {
+    flex: 0 0 100%;
+  }
 }
