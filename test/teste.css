@@ -1,55 +1,48 @@
-#sobre-mim {
-  background-color: #111; /* Fundo preto */
-  color: #eee; /* Texto cinza claro */
-  padding: 50px 0;
-  text-align: center;
-}
-
-.timeline-container {
-  width: 90%;
-  margin: 0 auto;
-  overflow-x: hidden; /* Esconde a barra de rolagem horizontal */
+.carousel {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
   position: relative;
+  margin: auto;
 }
 
-.timeline {
-  display: flex;
-  white-space: nowrap;
-  transition: transform 0.5s ease-in-out; /* Transição suave */
+.carousel-item {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
 }
 
-.timeline li {
-  flex: 0 0 100%; /* Define cada marco para ocupar 100% da largura */
-  padding: 20px 0;
-  list-style: none;
+.carousel-item.active {
+  opacity: 1;
 }
 
-.timeline h3 {
-  color: #fff; /* Títulos brancos */
+.carousel-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.timeline p {
-  line-height: 1.6;
+.carousel-caption h3 {
+  font-size: 2rem;
+  margin-bottom: 10px;
 }
 
-/* Estilos para os botões de navegação */
-.timeline-navigation {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
+.carousel-caption p {
+  font-size: 1.2rem;
 }
 
-.timeline-navigation button {
-  background-color: #333; /* Botões cinza escuro */
-  color: #eee;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-}
-
-/* Estilos responsivos */
-@media (max-width: 768px) {
-  .timeline li {
-    flex: 0 0 100%;
-  }
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.25);
 }
