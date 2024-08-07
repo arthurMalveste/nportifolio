@@ -13,6 +13,11 @@
     /* background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)); */
     
 }
+
+.particles-js-canvas-el {
+    margin: -95px 0;
+}
+
 h1{
     position: relative;
     top: 50%;
@@ -24,4 +29,27 @@ h1{
     overflow: hidden;
     font-size: 80px;
     color: white;
+    z-index: 2;
+}
+
+.div-central {
+    position: absolute;
+    top: 50%;
+    padding-top: 100px;
+    background-color: #000000c9;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin: 0 20%;
+}
+
+.texto-init{
+    font-size: 15px;
+    color: white;
+}
+
+.imagem-init{
+    max-width: 200px;
 }
