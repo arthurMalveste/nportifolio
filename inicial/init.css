@@ -1,0 +1,169 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+    ;
+}
+
+#particles-js{
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    /* background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)); */
+    
+}
+
+.particles-js-canvas-el {
+    margin: -95px 0;
+}
+
+h1{
+    position: relative;
+    top: 50%;
+    text-align: center;
+    overflow: hidden;
+    max-height: 100vh;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    font-size: 80px;
+    color: white;
+    z-index: 2;
+}
+
+.div-central {
+    position: absolute;
+    top: 50%;
+    padding-top: 100px;
+    background-color: #000000c9;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin: 0 20%;
+}
+
+.texto-init{
+    font-size: 15px;
+    color: white;
+}
+
+.imagem-init{
+    max-width: 200px;
+}
+
+.popup {
+    position: fixed;
+    text-align: center;
+    bottom: 28px;
+    left: 15%;
+    border: 1px solid #21212a;
+    width: 70%;
+    background-color: #121212a1;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 -2px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.4s ease-in-out;
+    transform: translateY(100%);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-color: transparent;
+}
+
+.popup.active {
+    transform: translateY(0);
+}
+
+.popup .arrow {
+    position: absolute;
+    top: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 45px;
+    height: 45px;
+    background-color: #ffffff;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    cursor: pointer;
+    transition: transform 0.4s ease;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
+}
+.popup.active .arrow {
+    transform: translateX(-50%) rotate(180deg);
+}
+.popup .content-text {
+    margin-bottom: 20px;
+    font-size: 21px;
+    line-height: 1.6;
+    padding: 5px 40px;
+
+}
+.popup .explore-btn {
+    padding: 10px 20px;
+    margin: 18px 0;
+    font-size: 16px;
+    color: #1a1a1a;
+    background-color: #ffd700;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.popup .explore-btn:hover {
+    background-color: #ffca28;
+}
+
+/* From Uiverse.io by gharsh11032000 */ 
+.animated-button {
+    position: relative;
+    display: inline-block;
+    padding: 12px 24px;
+    border: none;
+    font-size: 16px;
+    background-color: inherit;
+    border-radius: 100px;
+    font-weight: 600;
+    color: #ffffff40;
+    box-shadow: 0 0 0 2px #ffffff20;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+  }
+  
+  .animated-button span:last-child {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    background-color: #181818;
+    border-radius: 50%;
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.320, 1);
+  }
+  
+  .animated-button span:first-child {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .animated-button:hover {
+    box-shadow: 0 0 0 5px #d3d3d360;
+    color: #ffffff;
+  }
+  
+  .animated-button:active {
+    scale: 0.95;
+  }
+  
+  .animated-button:hover span:last-child {
+    width: 150px;
+    height: 150px;
+    opacity: 1;
+  }
+  
+  
+  
