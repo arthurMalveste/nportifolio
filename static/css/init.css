@@ -6,6 +6,10 @@
     ;
 }
 
+a {
+    text-decoration: none;
+}
+
 #particles-js{
     width: 100%;
     height: 100vh;
