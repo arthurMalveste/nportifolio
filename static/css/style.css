@@ -309,15 +309,15 @@ nav .burger-menu {
 
 .card-client::after{
 display: block; /* Para que possamos definir a altura */
-position: absolute;
-height: 60%;
-margin: 36px 0 0 44%;
-width: 1px;
-content: '';
-padding: 4px 1px;
-border-radius: 100px;
-background-color: #000;
-transition: 2s;
+/* position: absolute; */
+/* height: 60%; */
+/* margin: 36px 0 0 44%; */
+/* width: 1px; */
+/* content: ''; */
+/* padding: 4px 1px; */
+/* border-radius: 100px; */
+/* background-color: #000; */
+/* transition: 2s; */
 }
 
 img{
@@ -434,7 +434,7 @@ img{
 
 .aboutP2{
   max-width: 400px;
-  padding: 10%;
+  padding: 4%;
 }
 
 .aboutImg{
