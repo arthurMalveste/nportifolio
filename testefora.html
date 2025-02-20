@@ -3,96 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pop-up com Design Moderno</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f0f2f5;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            overflow: hidden;
-        }
-        .content {
-            padding: 20px;
-            font-size: 24px;
-        }
-        .popup {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background-color: #1a1a1a;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-            box-shadow: 0 -2px 15px rgba(0, 0, 0, 0.5);
-            transition: transform 0.4s ease-in-out;
-            transform: translateY(100%);
-            border-top-left-radius: 20px;
-            border-top-right-radius: 20px;
-        }
-        .popup.active {
-            transform: translateY(0);
-        }
-        .popup .arrow {
-            position: absolute;
-            top: -30px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 40px;
-            height: 40px;
-            background-color: #1a1a1a;
-            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-            cursor: pointer;
-            transition: transform 0.4s ease;
-            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
-        }
-        .popup.active .arrow {
-            transform: translateX(-50%) rotate(180deg);
-        }
-        .popup .content-text {
-            margin-bottom: 20px;
-            font-size: 18px;
-            line-height: 1.6;
-        }
-        .popup .explore-btn {
-            padding: 10px 20px;
-            font-size: 16px;
-            color: #1a1a1a;
-            background-color: #ffd700;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        .popup .explore-btn:hover {
-            background-color: #ffca28;
-        }
-    </style>
+    <title>Developer Portfolio</title>
+    <link rel="stylesheet" href="/static/css/stylemain.css">
 </head>
 <body>
-    <div class="content">
-        Conteúdo Principal
-    </div>
-    
-    <div class="popup" id="popup">
-        <div class="arrow" id="arrow"></div>
-        <div class="content-text">
-            Sou um jovem desenvolvedor de sistemas apaixonado por tecnologia, atualmente com 17 anos. Estou cursando Desenvolvimento de Sistemas pelo SENAI, onde estou adquirindo conhecimentos sólidos e práticos na área. Minha jornada na tecnologia é movida pela curiosidade e pelo desejo constante de aprender e inovar.
-        </div>
-        <button class="explore-btn">Explore Mais</button>
-    </div>
+    <main>
+        <!-- About Me Section -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-content">
+                    <div class="about-image">
+                        <div class="image-placeholder">
+                            <img src="/static/img/rosto.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="about-text">
+                        <h3>Software Developer</h3>
+                        <p>Hello! I'm a passionate software developer with expertise in creating elegant solutions to complex problems. I specialize in full-stack development and love working with modern technologies.</p>
+                        <div class="tech-stack">
+                            <span class="tech-item">JavaScript</span>
+                            <span class="tech-item">Python</span>
+                            <span class="tech-item">React</span>
+                            <span class="tech-item">Node.js</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <script>
-        const popup = document.getElementById('popup');
-        const arrow = document.getElementById('arrow');
-
-        arrow.addEventListener('click', function() {
-            popup.classList.toggle('active');
-        });
-    </script>
+        <!-- Projects Section -->
+        <section id="projects" class="projects-section">
+            <div class="container">
+                <h2 class="section-title">Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img class="imagem-projeto" src="/static/img/e-problems.png" alt="">
+                        </div>
+                        <h3>Project One</h3>
+                        <p>A sophisticated web application built with modern technologies.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link">View Project</a>
+                            <a href="#" class="project-link">Source Code</a>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img class="imagem-projeto" src="/static/img/happiebot.png" alt="">
+                        </div>
+                        <h3>Project Two</h3>
+                        <p>An innovative mobile-first responsive design implementation.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link">View Project</a>
+                            <a href="#" class="project-link">Source Code</a>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img class="imagem-projeto" src="/static/img/gbxp.jpg" alt="">
+                        </div>
+                        <h3>Project Three</h3>
+                        <p>A performant backend system with advanced features.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link">View Project</a>
+                            <a href="#" class="project-link">Source Code</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="projects" class="projects-section">
+            <div class="container">
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img class="imagem-projeto" src="/static/img/e-problems.png" alt="">
+                        </div>
+                        <h3>Project One</h3>
+                        <p>A sophisticated web application built with modern technologies.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link">View Project</a>
+                            <a href="#" class="project-link">Source Code</a>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img class="imagem-projeto" src="/static/img/happiebot.png" alt="">
+                        </div>
+                        <h3>Project Two</h3>
+                        <p>An innovative mobile-first responsive design implementation.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link">View Project</a>
+                            <a href="#" class="project-link">Source Code</a>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img class="imagem-projeto" src="/static/img/gbxp.jpg" alt="">
+                        </div>
+                        <h3>Project Three</h3>
+                        <p>A performant backend system with advanced features.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link">View Project</a>
+                            <a href="#" class="project-link">Source Code</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="/static/js/main.js"></script>
 </body>
 </html>
+
