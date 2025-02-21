@@ -21,6 +21,76 @@ body {
     line-height: 1.6;
 }
 
+::selection{
+    background-color: var(--text-primary);
+    color: var(--accent);
+}
+
+#nav {
+    border-bottom: white solid 1px;
+    background-color: #0e0e0e;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    
+}
+.nav-item {
+color: #fff;
+border-bottom: 2px solid transparent;
+transition: border-color 0.3s ease;
+}
+
+.nav-item:hover {
+border-color: #646cff;
+}
+#nav a {
+    color: #f2f2f2;
+    text-align: center;
+    padding: 5px 5px;
+    margin: 9px 10px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.burger-menu {
+    display: none;
+    font-size: 24px;
+    color: #f2f2f2;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.navigation {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navigation li {
+    float: left;
+}
+
+@media screen and (max-width: 768px) {
+    .navigation {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navigation li {
+        text-align: center;
+        width: 100%;
+    }
+
+    .burger-menu {
+        display: block;
+    }
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -94,7 +164,7 @@ section {
 }
 
 .about-text h3 {
-    font-size: 1.8rem;
+    font-size: 2rem;
     margin-bottom: 1.5rem;
     color: var(--accent);
 }
@@ -117,6 +187,7 @@ section {
     border-radius: 20px;
     font-size: 0.9rem;
     transition: var(--transition);
+    cursor: default;
 }
 
 .tech-item:hover {
