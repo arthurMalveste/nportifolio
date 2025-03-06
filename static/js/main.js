@@ -137,3 +137,103 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    const cursorBlur = document.createElement('div');
+    cursorBlur.classList.add('cursor-blur');
+    document.body.appendChild(cursorBlur);
+
+    document.addEventListener('mousemove', (e) => {
+        cursorBlur.style.transform = `translate(${e.clientX - 50}px, ${e.clientY - 50}px)`;
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.getElementById('contactForm');
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    const messageInput = document.getElementById('message');
+    const nameError = document.getElementById('name-error');
+    const emailError = document.getElementById('email-error');
+    const successMessage = document.getElementById('success-message');
+
+    // Função de validação do e-mail
+    function isValidEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    }
+
+    // Validação dos campos
+    function validateName() {
+        if (nameInput.value.trim() === '') {
+            nameInput.classList.add('error');
+            nameError.style.display = 'block';
+            return false;
+        } else {
+            nameInput.classList.remove('error');
+            nameError.style.display = 'none';
+            return true;
+        }
+    }
+
+    function validateEmail() {
+        if (emailInput.value.trim() === '' || !isValidEmail(emailInput.value)) {
+            emailInput.classList.add('error');
+            emailError.style.display = 'block';
+            return false;
+        } else {
+            emailInput.classList.remove('error');
+            emailError.style.display = 'none';
+            return true;
+        }
+    }
+
+    // Evento de submissão do formulário
+    contactForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const isNameValid = validateName();
+        const isEmailValid = validateEmail();
+
+        if (isNameValid && isEmailValid) {
+            // Preparar os dados para envio
+            const formData = {
+                name: nameInput.value.trim(),
+                email: emailInput.value.trim(),
+                message: messageInput.value.trim()
+            };
+
+            // Enviar os dados usando Fetch API
+            fetch('https://seu-backend.com/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Erro ao enviar o formulário');
+                }
+                return response.json();
+            })
+            .then(data => {
+                // Exibir mensagem de sucesso
+                successMessage.style.display = 'block';
+                contactForm.reset();
+
+                // Esconder a mensagem após 5 segundos
+                setTimeout(() => {
+                    successMessage.style.display = 'none';
+                }, 5000);
+            })
+            .catch(error => {
+                console.error('Erro:', error);
+                alert('Ocorreu um erro ao enviar sua mensagem. Por favor, tente novamente mais tarde.');
+            });
+        }
+    });
+
+    // Validação em tempo real
+    nameInput.addEventListener('blur', validateName);
+    emailInput.addEventListener('blur', validateEmail);
+});
