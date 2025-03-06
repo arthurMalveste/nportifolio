@@ -169,9 +169,59 @@
             </div>
           </footer>
         
+        <!-- Popup message -->
+        <div id="popup" class="popup">
+            <span class="popup-text">E-mail enviado com sucesso!</span>
+        </div>
+        
     </main>
     <script src="../static/js/main.js"></script>
     <script src="../static/js/scrool.js"></script>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const formData = new FormData(this);
+
+            fetch('/enviar', {
+                method: 'POST',
+                body: formData,
+            })
+            .then(response => response.text())
+            .then(data => {
+                if (data.includes("Nova mensagem de")) {
+                    showPopup();
+                } else {
+                    alert(data);
+                }
+            })
+            .catch(error => {
+                alert('Erro ao enviar e-mail: ' + error);
+            });
+        });
+
+        function showPopup() {
+            const popup = document.getElementById('popup');
+            popup.style.display = 'block';
+            setTimeout(() => {
+                popup.style.display = 'none';
+            }, 3000);
+        }
+    </script>
+    <style>
+        .popup {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+    </style>
 </body>
 </html>
 

@@ -67,14 +67,36 @@ def enviar_email():
 
     corpo_email = f"""
     <html>
-    <body>
-        <h2>Nova mensagem recebida:</h2>
-        <p><strong>Nome:</strong> {nome}</p>
-        <p><strong>E-mail:</strong> {email}</p>
-        <p><strong>Mensagem:</strong></p>
-        <blockquote>{mensagem}</blockquote>
+    <body style="font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f9; color: #333;">
+
+        <div style="width: 100%; max-width: 600px; margin: 0 auto; background-color: #ffffff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+            <h2 style="color: #4CAF50; text-align: center; font-size: 24px; margin-bottom: 20px;">Nova Mensagem Recebida</h2>
+
+            <div style="margin-bottom: 15px;">
+                <p style="font-size: 16px; font-weight: bold; color: #555;">Nome:</p>
+                <p style="font-size: 16px; color: #555; background-color: #f9f9f9; padding: 10px; border-radius: 4px; border: 1px solid #ddd;">{nome}</p>
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <p style="font-size: 16px; font-weight: bold; color: #555;">E-mail:</p>
+                <p style="font-size: 16px; color: #555; background-color: #f9f9f9; padding: 10px; border-radius: 4px; border: 1px solid #ddd;">{email}</p>
+            </div>
+
+            <div style="margin-bottom: 20px;">
+                <p style="font-size: 16px; font-weight: bold; color: #555;">Mensagem:</p>
+                <blockquote style="font-size: 16px; font-style: italic; color: #333; background-color: #f9f9f9; padding: 15px; border-left: 4px solid #4CAF50; border-radius: 4px; margin: 0; font-family: 'Georgia', serif;">
+                    {mensagem}
+                </blockquote>
+            </div>
+
+            <div style="text-align: center; font-size: 14px; color: #888;">
+                <p>&#169; 2025 Sua Empresa - Todos os direitos reservados</p>
+            </div>
+        </div>
+
     </body>
-    </html>
+</html>
+
     """
 
     msg.attach(MIMEText(corpo_email, "html"))
@@ -85,7 +107,7 @@ def enviar_email():
         servidor.login(EMAIL_USUARIO, EMAIL_SENHA)
         servidor.sendmail(EMAIL_USUARIO, EMAIL_DESTINO, msg.as_string())
         servidor.quit()
-        return "Mensagem enviada com sucesso!"
+        return render_template('testefora.html')
     except Exception as e:
         return f"Erro ao enviar mensagem: {e}"
 
