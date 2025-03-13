@@ -1,24 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="pt-BR">
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Developer Portfolio</title>
     <link rel="stylesheet" href="../static/css/stylemain.css">
-</head>
-<body>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  </head>
+  <body id="body">
     <!-- Navbar -->
     <nav id="nav">
-        <a href="/" class="scroll" id="aInicial"><h1 class="h1Nav inicial scroll">Arthur Malveste</h1></a>
-        <button class="burger-menu">
-            <ion-icon name="menu-outline"></ion-icon>
-        </button>
-        <ul class="navigation">
-            <li><a href="#about" class="scroll nav-item">Sobre</a></li>
-            <li><a href="#projects" class=" scroll nav-item">Projetos</a></li>
-            <li><a href="#contact" class=" scroll nav-item">Contato</a></li>
-        </ul>
+      <a href="/" class="scroll" id="aInicial"><h1 class="h1Nav inicial scroll">Arthur Malveste</h1></a>
+      <button class="burger-menu">
+        <ion-icon name="menu-outline"></ion-icon>
+      </button>
+      <ul class="navigation">
+        <li><a href="#about" class="scroll nav-item">Sobre</a></li>
+        <li><a href="#projects" class="scroll nav-item">Projetos</a></li>
+        <li><a href="#experience" class="scroll nav-item">Experiência</a></li>
+        <li><a href="#contact" class="scroll nav-item">Contato</a></li>
+      </ul>
     </nav>
+    
 
     <main>
         <!-- About Me Section -->
@@ -112,10 +115,60 @@
                 </div>
             </div>
         </section>
-        
+
+
+        <!-- teste -->
+        <section id="experience" class="experience-section">
+            <h2>Experiência com Tecnologia</h2>
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                  <h3>Free Lance</h3>
+                  <h4>Negociarie</h4>
+                  <p class="date">2024</p>
+                  <ul>
+                    <li>Desenvolvimento de aplicações web</li>
+                    <li>Captura de Leads</li>
+                    <li>Tecnologias utilizadas: PHP, MySql, JavaScript</li>
+                  </ul>
+                </div>
+              </div>
+    
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                  <h3>Medalhas Olímpicas</h3>
+                  <h4>Olimpíada Brasileira de Robótica</h4>
+                  <p class="date">2023 - 2024</p>
+                  <ul>
+                    <li>Medalha de Bronze 2024 na modalidade teórica</li>
+                    <li>Participação em 2023 na modalidade presencial</li>
+                    <li>Participação em 2023 na modalidade teórica</li>
+                  </ul>
+                </div>
+              </div>
+    
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                  <h3>Certificados</h3>
+                  <h4>Mais de 35 certificados</h4>
+                  <p class="date">2022 - 2024</p>
+                  <ul>
+                    <li>Alura</li>
+                    <li>Senai</li>
+                    <li>Sebrae</li>
+                    <li>Fundação Bradesco</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+
         <!-- Separator Line -->
         <div class="separator-line"></div>
-        
+    
         <footer id="contact">
             <div class="footer-container">
               <div class="contact-form">
@@ -136,7 +189,7 @@
                     <textarea id="message" class="form-control" name="mensagem" rows="5" placeholder="Sua mensagem"></textarea>
                   </div>
                   <button type="submit" class="btn-submit">Enviar Mensagem</button>
-                  <div class="success-message" id="success-message">
+                  <div class="success-message" id="success-message" style="display: none;">
                     Mensagem enviada com sucesso! Entraremos em contato em breve.
                   </div>
                 </form>
@@ -170,7 +223,7 @@
           </footer>
         
         <!-- Popup message -->
-        <div id="popup" class="popup">
+        <div id="popup" class="popup" style="display: none;">
             <span class="popup-text">E-mail enviado com sucesso!</span>
         </div>
         
@@ -190,7 +243,13 @@
             .then(response => response.text())
             .then(data => {
                 if (data.includes("Nova mensagem de")) {
-                    showPopup();
+                    const popup = document.getElementById('popup');
+                    if (popup) {
+                        popup.style.display = 'block';
+                        setTimeout(() => {
+                            popup.style.display = 'none';
+                        }, 3000);
+                    }
                 } else {
                     alert(data);
                 }
@@ -199,29 +258,26 @@
                 alert('Erro ao enviar e-mail: ' + error);
             });
         });
+        
 
-        function showPopup() {
-            const popup = document.getElementById('popup');
-            popup.style.display = 'block';
-            setTimeout(() => {
-                popup.style.display = 'none';
-            }, 3000);
-        }
+// Animação ao scroll
+function checkScroll() {
+  const timelineItems = document.querySelectorAll('.timeline-item');
+  
+  timelineItems.forEach(item => {
+    const itemTop = item.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
+    
+    if (itemTop < windowHeight * 0.8) {
+      item.classList.add('visible');
+    }
+  });
+}
+
+window.addEventListener('scroll', checkScroll);
+window.addEventListener('load', checkScroll);
+
     </script>
-    <style>
-        .popup {
-            display: none;
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #4CAF50;
-            color: white;
-            padding: 15px;
-            border-radius: 5px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-        }
-    </style>
 </body>
 </html>
 

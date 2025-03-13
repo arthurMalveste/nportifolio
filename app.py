@@ -1,11 +1,30 @@
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 import smtplib
+import requests
+from datetime import datetime
 import re
 import dns.resolver
 from flask import Flask, jsonify, redirect, render_template, request, session
+import os
+from dotenv import load_dotenv
+# Carregando as variáveis de ambiente do arquivo .env
+
+load_dotenv()
+# Acessando a variável de ambiente API_KEY
+GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
+GITHUB_USERNAME = os.getenv("GITHUB_USERNAME")
+# Verificando se a API_KEY foi carregada com sucesso
+if GITHUB_TOKEN:
+    print("Chave de API carregada com sucesso.")
+else:
+    print("Chave de API não encontrada no arquivo .env.")
+
 
 app = Flask(__name__)
+
+
+
 
 # Função para validar o formato do e-mail
 def validar_email_formato(email):
@@ -128,6 +147,56 @@ def pagina_nao_encontrada_erro(error):
 @app.errorhandler(500)
 def erro_interno_erro(error):
     return render_template('500.html'), 500
+
+@app.route('/github-stats', methods=['GET'])
+def get_github_stats():
+    headers = {
+        "Authorization": f"token {GITHUB_TOKEN}",
+        "Accept": "application/vnd.github.v3+json"
+    }
+
+    # Busca informações do usuário
+    user_url = f"https://api.github.com/users/{GITHUB_USERNAME}"
+    user_response = requests.get(user_url, headers=headers)
+    user_data = user_response.json()
+
+    # Busca repositórios do usuário
+    repos_url = f"https://api.github.com/users/{GITHUB_USERNAME}/repos"
+    repos_response = requests.get(repos_url, headers=headers)
+    repos_data = repos_response.json()
+
+    # Calcula o número total de commits (aproximado)
+    total_commits = 0
+    for repo in repos_data:
+        commits_url = f"https://api.github.com/repos/{GITHUB_USERNAME}/{repo['name']}/commits"
+        commits_response = requests.get(commits_url, headers=headers)
+        if commits_response.ok:
+            total_commits += len(commits_response.json())
+
+    # Busca a linguagem principal do repositório "nportifolio"
+    portfolio_language = "Nenhuma"
+    for repo in repos_data:
+        if repo['name'].lower() == "nportifolio":
+            languages_url = f"https://api.github.com/repos/{GITHUB_USERNAME}/{repo['name']}/languages"
+            languages_response = requests.get(languages_url, headers=headers)
+            if languages_response.ok:
+                languages_data = languages_response.json()
+                if languages_data:
+                    portfolio_language = max(languages_data, key=languages_data.get)
+            break
+
+    created_at = datetime.strptime(user_data['created_at'], "%Y-%m-%dT%H:%M:%SZ")
+    created_at_formatted = created_at.strftime("%d/%m/%Y")
+
+    # Retorna os dados
+    return jsonify({
+        "username": user_data['login'],
+        "bio": user_data['bio'] or "Sem descrição",
+        "total_commits": total_commits,
+        "public_repos": user_data['public_repos'],
+        "account_created_at": created_at_formatted,
+        "portfolio_language": portfolio_language
+    })
 
 if __name__ == '__main__':
     app.run(debug=False)
