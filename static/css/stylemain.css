@@ -615,3 +615,31 @@ footer {
   }
 }
 
+.sec-direitos {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1rem 5%;;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  background-color: #0a0a0a;
+  gap: 32px;
+  border-top: 1px solid #3b3b3b;
+}
+.sec-direitos p {
+  color: #a6a6a6;
+  gap: 30px;
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+.sec-direitos p a {
+  list-style: none;
+  color: #a6a6a6;
+  transition: .3s all;
+}
+
+.sec-direitos p a:hover {
+  color: #f8f8f8;
+}
