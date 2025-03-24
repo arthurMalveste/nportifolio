@@ -2,7 +2,7 @@
 
 <br>
 <br>
-<h1> V(0.1.2)
+<h1> V(0.2.0)
 
 ### Redes Sociais
 
@@ -21,7 +21,7 @@
 
 ### Linguagens usadas
 
-<li> Java Script (particles.js, Scroll)
+<li> Java Script
 <li> Python (Flask)
 <li> HTML
 <LI> CSS
@@ -35,8 +35,7 @@
 Navegue até o diretório do projeto e crie um ambiente virtual:
 
 ```sh
-cd /d:/portifolio/portifolio/nportifolio
-python -m venv venv
+python -m .venv venv
 ```
 
 ### 2. Ativar o Ambiente Virtual
@@ -44,19 +43,19 @@ python -m venv venv
 - No Windows (cmd.exe):
 
 ```sh
-venv\Scripts\activate
+.venv\Scripts\activate
 ```
 
 - No Windows (Git Bash):
 
 ```sh
-source venv/Scripts/activate
+source .venv/Scripts/activate
 ```
 
 - No macOS/Linux:
 
 ```sh
-source venv/bin/activate
+source .venv/bin/activate
 ```
 
 ### 3. Instalar Pacotes Necessários
