@@ -636,3 +636,34 @@ textarea {
 .sec-direitos p a:hover {
   color: #f8f8f8;
 }
+
+@media(max-width: 768px) {
+    .about-image {
+      position: relative;
+      display: flex;
+      margin: 0 auto;
+    }
+    }
+
+@media(max-width: 375px) {
+    .image-inicial{
+        max-width: 240px;
+    }    
+}
+
+@media(max-width: 320px) {
+    section{
+        padding-top: 30px;
+        padding-bottom: 30px;
+
+    }
+    .project-link {
+        text-decoration: none;
+        color: var(--text-primary);
+        padding: 0.5rem 1rem;
+        border: 1px solid var(--accent);
+        border-radius: 20px;
+        transition: var(--transition);
+        font-size: 12px;
+    }
+}
