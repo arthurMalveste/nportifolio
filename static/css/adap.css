@@ -24,3 +24,11 @@
         margin: 0 auto;
     }
 }
+
+@media(max-width: 767px) {
+.about-image {
+  position: relative;
+  display: flex;
+  margin: 0 auto;
+}
+}
