@@ -215,6 +215,8 @@ section {
     border-radius: 20px;
     padding: 1.5rem;
     transition: var(--transition);
+    display: flex;
+    flex-direction: column;
 }
 
 .project-card:hover {
@@ -223,9 +225,20 @@ section {
 
 .project-image {
     width: 100%;
+    height: 200px;
     background: #1a1a1a;
     border-radius: 10px;
     margin-bottom: 1.5rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Logotipos: enquadram inteiros no mesmo box, sem corte */
+.project-image.logo {
+    background: #ffffff;
+    padding: 1.5rem;
 }
 
 .project-card h3 {
@@ -242,6 +255,8 @@ section {
 .project-links {
     display: flex;
     gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: auto;
 }
 
 .project-link {
@@ -259,9 +274,14 @@ section {
 }
 
 .imagem-projeto {
-    max-width: 100%;
+    width: 100%;
     height: 100%;
+    object-fit: cover;
     border-radius: 10px;
+}
+
+.project-image.logo .imagem-projeto {
+    object-fit: contain;
 }
 
 /* Responsive Design */
@@ -552,7 +572,7 @@ textarea {
 }
 
 .timeline-content h4 {
-    color: #888;
+    color: #b3b8ff;
     margin: 0 0 10px 0;
     font-size: 1.1rem;
 }
@@ -570,7 +590,8 @@ textarea {
 
 .timeline-content ul li {
     margin-bottom: 8px;
-    color: rgba(255, 255, 255, 0.8);
+    color: #8b8b8b;
+    list-style: none;
 }
 
 .timeline-item:hover .timeline-dot {
@@ -601,10 +622,6 @@ textarea {
 
     .timeline-content {
         background: rgba(100, 108, 255, 0.05);
-    }
-
-    .timeline-content ul li {
-        color: #213547;
     }
 }
 
