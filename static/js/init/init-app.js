@@ -16,7 +16,8 @@ particlesJS('particles-js',
   {
     "particles": {
       "number": {
-        "value": 80,
+        /* menos partículas no celular: 80 com retina_detect derruba o FPS */
+        "value": window.innerWidth < 768 ? 35 : 80,
         "density": {
           "enable": true,
           "value_area": 800

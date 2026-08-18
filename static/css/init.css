@@ -6,6 +6,12 @@
     ;
 }
 
+html, body {
+    overflow-x: hidden;
+    background-color: black;
+    -webkit-text-size-adjust: 100%; /* impede o iOS de inflar o texto na horizontal */
+}
+
 /* From Uiverse.io by ShadowShahriar */ 
 button {
  --border-radius: 15px;
@@ -79,29 +85,37 @@ a {
 }
 
 #particles-js{
+    position: relative;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;  /* fallback para navegadores antigos */
+    min-height: 100svh; /* no mobile, desconta a barra de endereço */
     background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+    padding: 1.5rem;
+    overflow: hidden;
     /* background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)); */
-    
+
 }
 
+/* O canvas vira camada de fundo, em vez de empurrar o conteúdo no fluxo */
 .particles-js-canvas-el {
-    margin: -95px 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
 }
 
 h1{
     position: relative;
-    top: 50%;
-    text-align: center;
-    overflow: hidden;
-    max-height: 100vh;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    overflow: hidden;
-    font-size: 80px;
-    color: white;
     z-index: 2;
+    text-align: center;
+    font-size: clamp(2rem, 11vw, 80px);
+    line-height: 1.1;
+    color: white;
 }
 
 .div-central {
@@ -266,8 +280,8 @@ nav {
 }
 
 .botaoInicial {
+    position: relative;
+    z-index: 2;
     background-color: #000;
-    position: absolute;
-    top: 60%;
-    left: 45%;
+    border-radius: var(--border-radius, 15px);
 }

@@ -11,10 +11,14 @@
     <!-- Navbar -->
     <nav id="nav">
       <a href="/" class="scroll" id="aInicial"><h1 class="h1Nav inicial scroll">Arthur Malveste</h1></a>
-      <button class="burger-menu">
-        <ion-icon name="menu-outline"></ion-icon>
+      <button class="burger-menu" aria-label="Abrir menu" aria-expanded="false" aria-controls="navigation">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
       </button>
-      <ul class="navigation">
+      <ul class="navigation" id="navigation">
         <li><a href="#about" class="scroll nav-item">Sobre</a></li>
         <li><a href="#projects" class="scroll nav-item">Projetos</a></li>
         <li><a href="#experience" class="scroll nav-item">Experiência</a></li>
@@ -322,6 +326,23 @@
             });
         });
         
+
+// Menu mobile
+const burger = document.querySelector('.burger-menu');
+const navigation = document.querySelector('.navigation');
+
+burger.addEventListener('click', () => {
+  const aberto = navigation.classList.toggle('active');
+  burger.setAttribute('aria-expanded', aberto);
+});
+
+// Fecha o menu ao escolher uma seção
+navigation.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    navigation.classList.remove('active');
+    burger.setAttribute('aria-expanded', 'false');
+  });
+});
 
 // Animação ao scroll
 function checkScroll() {
